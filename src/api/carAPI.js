@@ -1,17 +1,15 @@
 import { CAR_API_URL, CAR_FUELTYPE, CAR_SEGMENT } from "./constant";
 import { createInstance } from "./createInstance";
 
-const BASE_URL = "https://preonboarding.platdev.net/api";
-
-class carAPI {
+export class CarAPI {
   #API;
   #instance;
   #fuelType;
   #segment;
 
-  constructor() {
+  constructor(url) {
     this.#instance = createInstance({
-      url: BASE_URL,
+      url: url,
       config: {
         timeout: 3000,
       },
@@ -66,5 +64,3 @@ class carAPI {
     return this.getSegmentCars({ segment: this.#segment.suv });
   }
 }
-
-export default new carAPI();

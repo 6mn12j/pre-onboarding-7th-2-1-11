@@ -1,5 +1,5 @@
 import { useState } from "react";
-import carAPI from "../api/carAPI";
+import { carAPI } from "../context/Providers";
 import { carModel } from "../utils/carModel";
 
 const initalTags = [

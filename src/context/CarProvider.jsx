@@ -1,5 +1,4 @@
 import { createContext, useContext, useMemo, useState } from "react";
-import carAPI from "../api/carAPI";
 
 const CarInfoValueContext = createContext(null);
 const CarInfoActionContext = createContext(null);
@@ -20,7 +19,7 @@ const useCarInfoActions = () => {
   return value;
 };
 
-const CarInfoProvider = ({ children }) => {
+const CarInfoProvider = ({ children, carAPI }) => {
   const [carInfo, setCarInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const actions = useMemo(
