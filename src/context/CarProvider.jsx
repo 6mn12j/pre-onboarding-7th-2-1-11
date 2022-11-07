@@ -41,7 +41,7 @@ const CarInfoProvider = ({ children, carAPI }) => {
         setCarInfo(payload);
       },
     }),
-    [],
+    [carAPI],
   );
 
   return (
